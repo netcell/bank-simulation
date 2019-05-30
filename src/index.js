@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
 import { Simulator, useSimulator } from "./Simulator";
 
 function App() {
-  const simYellow = useSimulator("yellow", 100, 100, 1);
-  const simRed = useSimulator("red", 100, 100, 1);
-  const simBlue = useSimulator("blue", 100, 100, 1);
+  const simYellow = useSimulator("yellow", 100, 100, 10);
+  const simRed = useSimulator("red", 100, 100, 10);
+  const simBlue = useSimulator("blue", 100, 100, 10);
 
   const lastDiffs = [simYellow, simRed, simBlue].map(
     sim => sim.waitTimes.lastDiff

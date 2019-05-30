@@ -59,18 +59,14 @@ export const Simulator = ({
       <p>Queue Length: {queueLengths.lastValue}</p>
       <div
         style={{
-          height: "200px",
-          overflowY: "scroll",
           border: "1px solid"
         }}
       >
-        {logs.map(log => (
-          <p>{log}</p>
-        ))}
+        {logs[0]}
       </div>
       <div
         style={{
-          height: "100px",
+          height: "200px",
           overflowY: "scroll",
           border: "1px solid"
         }}
