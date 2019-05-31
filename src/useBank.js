@@ -54,9 +54,10 @@ export const useObserver = (timeScale = 1) => {
   const setTargets = (customerCreator, teller) => {
     if (!customerCreator || !teller) return null;
 
-    const handleNewCustomer = customer => {
+    const handleNewCustomer = (customer, nextCustomerArriveIn) => {
       setQueueLength(queueLengths => queueLengths.lastValue + 1);
       addLog(`Customer ${customer.index} arrived`);
+      addLog(`Next Customer arriving in ${nextCustomerArriveIn.toFixed(2)}s`);
     };
 
     const handleStartProccesingCustomer = (customer, processingTime) => {

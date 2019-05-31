@@ -62,7 +62,8 @@ export const Simulator = ({
           border: "1px solid"
         }}
       >
-        {logs[0]}
+        <p>{logs[0]}</p>
+        <p>{logs[1]}</p>
       </div>
       <div
         style={{

@@ -27,9 +27,10 @@ export class CustomerCreator {
 
     const customer = new Customer(this.type, lastCustomer.index);
     this.lastCustomer = customer;
-    this.onNewCustomer.dispatch(customer);
-
     const nextCustomerArriveIn = this.nextCustomerArriveIn();
+
+    this.onNewCustomer.dispatch(customer, nextCustomerArriveIn);
+
     this.interval = setTimeout(
       this.createCustomer,
       (nextCustomerArriveIn * 1000) / this.timeScale
